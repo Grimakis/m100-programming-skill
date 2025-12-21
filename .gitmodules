@@ -1,0 +1,3 @@
+[submodule "scripts/Sim8085"]
+	path = scripts/Sim8085
+	url = https://github.com/rhishmapandey/Sim8085

@@ -33,7 +33,21 @@ Use this skill whenever:
 - If you are shown an error code you can find the lookup table at: `references/m100-basic-errors.md`
 
 ## BASIC + ASM integration (CALL ABI)
+- Build subroutines as assembly first, before trying to integrate.
+- Always keep a copy of assembly subroutines in a /assembly subdirectory or equivalent.
 - See `references/m100-basic-asm-integration.md` for the calling convention, design guidance, and workflow.
+- Use `references/m100-basic-variable-layout.md` when you need array layout details,
+  VARPTR implications, or to debug pointer/stride issues in ML routines.
+- Use `references/m100-system-map.md` for known system addresses, hooks, and OS-managed
+  pointers on M100/PC-8201/T200.
+
+## Tooling: 8085 tester
+- Script: `scripts/run_8085_spec.py`
+- Usage: `python scripts/run_8085_spec.py --spec <path-to-spec.json>`
+- Directives: `ORG`, `DB`, `DW`, `DS`, `EQU`, `END`
+- Comments: `;` to end of line
+- Literals: decimal, `0xNN`, `$NN`, `NNH`, `0bNN`, `NNB`
+- Output: binary starts at the lowest ORG and fills gaps with `0x00`
 
 ## Output format rules (when generating BASIC)
 - Maintain your line-number spacing rules.

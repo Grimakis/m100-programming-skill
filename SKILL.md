@@ -40,6 +40,21 @@ Use this skill whenever:
   VARPTR implications, or to debug pointer/stride issues in ML routines.
 - Use `references/m100-system-map.md` for known system addresses, hooks, and OS-managed
   pointers on M100/PC-8201/T200.
+- Use `references/m100-rom-funcs.md` for a comprehensive list of ROM-routines you can CALL or JMP from BASIC or an ML subroutine.
+  Useful for controlling the screen.
+
+## Recommended debug steps (ML + BASIC)
+- Start with a tiny BASIC harness that only loads + CALLs the routine.
+- Confirm ML bytes and patch targets:
+  - PEEK a few known opcodes to ensure the loader ran.
+  - Validate patched jump operands match the expected addresses.
+- Validate parameter block bytes:
+  - PEEK the 4 bytes and compare to VARPTR values (low/high).
+  - Avoid creating new variables after capturing pointers.
+- Prove memory mapping:
+  - Pick a known element (e.g., S%(2,2)), compute its expected byte offset,
+    and compare PEEKs at base+offset to the BASIC value.
+- If values are wrong, re-check array layout order (first subscript varies fastest).
 
 ## Tooling: 8085 tester
 - Script: `scripts/run_8085_spec.py`

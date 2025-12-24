@@ -16,11 +16,11 @@ Use this skill whenever:
 - **Section spacing:** leave **~1000 line-number gaps** between major program sections (INIT / INPUT / GAMELOOP / RENDER / UTIL, etc.).
 - **Max BASIC line length:** **255 characters**.
 - **Variable names:** **2 characters max**, plus type sigil.
-- **Prefer explicit typing** so linting can detect mistakes.
-  - `%` integer
-  - `(exclamation)` single precision float
-  - `#` double precision float
-  - `$` string
+- **Prefer explicit typing** so linting can detect mistakes:
+  - % (integer)
+  - ! (single precision float)
+  - # (double precision float)
+  - $ (string)
 
 ## Expression/operator rules
 - Follow Model 100 operator hierarchy and left-to-right evaluation on same precedence level.

@@ -18,7 +18,7 @@ Use this skill whenever:
 - **Variable names:** **2 characters max**, plus type sigil.
 - **Prefer explicit typing** so linting can detect mistakes.
   - `%` integer
-  - `!` single precision float
+  - `(exclamation)` single precision float
   - `#` double precision float
   - `$` string
 
@@ -55,6 +55,9 @@ Use this skill whenever:
   - Pick a known element (e.g., S%(2,2)), compute its expected byte offset,
     and compare PEEKs at base+offset to the BASIC value.
 - If values are wrong, re-check array layout order (first subscript varies fastest).
+
+## Testing: .DO and .BA
+- If the
 
 ## Tooling: 8085 tester
 - Script: `scripts/run_8085_spec.py`

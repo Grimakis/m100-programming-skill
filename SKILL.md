@@ -11,16 +11,27 @@ Use this skill whenever:
 - Optimizing slow BASIC routines by rewriting hot loops in assembly.
 - Designing/adjusting the BASIC+ASM interface.
 
+## VSCode Extension (Optional but Recommended)
+If working in VSCode with the "TRS-80 Model 100/200 BASIC" extension installed:
+- See `references/vscode-extension-features.md` for comprehensive documentation on:
+  - Automatic diagnostics (line numbers, variable collisions, type mismatches)
+  - Quick fixes (truncate variables, rename to avoid collisions, renumber lines)
+  - Refactoring commands (pack, squash, remove comments, tokenize to .BA)
+  - Command palette shortcuts
+- **Proactively recommend extension features** when they can help solve issues
+- **Check for diagnostics** before suggesting manual code changes
+- Extension provides safer alternatives to manual edits (handles all references automatically)
+
 ## Non-negotiable constraints (BASIC)
 - **Line numbering:** default increment = **20**.
 - **Section spacing:** leave **~1000 line-number gaps** between major program sections (INIT / INPUT / GAMELOOP / RENDER / UTIL, etc.).
 - **Max BASIC line length:** **255 characters**.
 - **Variable names:** **2 characters max**, plus type sigil.
-- **Prefer explicit typing** so linting can detect mistakes.
-  - `%` integer
-  - `!` single precision float
-  - `#` double precision float
-  - `$` string
+- **Prefer explicit typing** so linting can detect mistakes:
+  - % (integer)
+  - ! (single precision float)
+  - # (double precision float)
+  - $ (string)
 
 ## Expression/operator rules
 - Follow Model 100 operator hierarchy and left-to-right evaluation on same precedence level.
@@ -55,6 +66,9 @@ Use this skill whenever:
   - Pick a known element (e.g., S%(2,2)), compute its expected byte offset,
     and compare PEEKs at base+offset to the BASIC value.
 - If values are wrong, re-check array layout order (first subscript varies fastest).
+
+## Testing: .DO and .BA
+- If the
 
 ## Tooling: 8085 tester
 - Script: `scripts/run_8085_spec.py`

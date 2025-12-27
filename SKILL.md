@@ -11,6 +11,17 @@ Use this skill whenever:
 - Optimizing slow BASIC routines by rewriting hot loops in assembly.
 - Designing/adjusting the BASIC+ASM interface.
 
+## VSCode Extension (Optional but Recommended)
+If working in VSCode with the "TRS-80 Model 100/200 BASIC" extension installed:
+- See `references/vscode-extension-features.md` for comprehensive documentation on:
+  - Automatic diagnostics (line numbers, variable collisions, type mismatches)
+  - Quick fixes (truncate variables, rename to avoid collisions, renumber lines)
+  - Refactoring commands (pack, squash, remove comments, tokenize to .BA)
+  - Command palette shortcuts
+- **Proactively recommend extension features** when they can help solve issues
+- **Check for diagnostics** before suggesting manual code changes
+- Extension provides safer alternatives to manual edits (handles all references automatically)
+
 ## Non-negotiable constraints (BASIC)
 - **Line numbering:** default increment = **20**.
 - **Section spacing:** leave **~1000 line-number gaps** between major program sections (INIT / INPUT / GAMELOOP / RENDER / UTIL, etc.).

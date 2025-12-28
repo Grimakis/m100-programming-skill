@@ -62,6 +62,7 @@ Use this skill whenever:
 - Examples:
   - `m100 tokenize program.DO --out program.BA`
   - `m100 detokenize program.BA --out program.DO`
+  - `m100 lint program.DO`
   - `m100 pack program.DO --out packed.DO`
   - `m100 squash program.DO --out squashed.DO`
   - `m100 renumber program.DO --start 100 --increment 10 --out renumbered.DO`

@@ -67,8 +67,15 @@ If working in VSCode with the "TRS-80 Model 100/200 BASIC" extension installed:
     and compare PEEKs at base+offset to the BASIC value.
 - If values are wrong, re-check array layout order (first subscript varies fastest).
 
-## Testing: .DO and .BA
-- If the
+## Testing: .DO and .BA (CLI only)
+- Use the `@m100/cli` tool for tokenizing/detokenizing and transformations.
+- If `m100` is missing, install it: `npm install -g @m100/cli`.
+- Examples:
+  - `m100 tokenize program.DO --out program.BA`
+  - `m100 detokenize program.BA --out program.DO`
+  - `m100 pack program.DO --out packed.DO`
+  - `m100 squash program.DO --out squashed.DO`
+  - `m100 renumber program.DO --start 100 --increment 10 --out renumbered.DO`
 
 ## Tooling: 8085 tester
 - Script: `scripts/run_8085_spec.py`
